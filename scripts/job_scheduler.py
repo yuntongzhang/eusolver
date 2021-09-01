@@ -68,11 +68,11 @@ for process_id in range(num_concurrent_processes):
 
 print('Starting %d worker processes, with %d jobs to run' % (num_concurrent_processes, len(job_list)))
 sys.stdout.flush()
-begin_time = time.clock()
+begin_time = time.process_time()
 for worker_process in worker_processes:
     worker_process.start()
 
 for worker_process in worker_processes:
     worker_process.join()
-end_time = time.clock()
+end_time = time.process_time()
 print('Completed %d jobs in %f seconds, with %d worker processes' % (len(job_list), end_time - begin_time, num_concurrent_processes))

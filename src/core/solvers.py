@@ -78,7 +78,7 @@ class Solver(object):
     def solve(self, generator_factory, term_solver, unifier, verifier, verify_term_solve=True):
         import time
 
-        time_origin = time.clock()
+        time_origin = time.process_time()
 
         while (True):
             # print('________________')
@@ -110,7 +110,7 @@ class Solver(object):
                 sol_or_cex = cexs
 
             if _is_expr(sol_or_cex):
-                solution_found_at = time.clock() - time_origin
+                solution_found_at = time.process_time() - time_origin
                 if self.report_additional_info:
                     yield (sol_or_cex,
                             unifier.last_dt_size,
