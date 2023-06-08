@@ -16,7 +16,7 @@ python3 -m pip install pyparsing z3-solver==4.8.7.0
 Build with:
 
 ```bash
-./script/build.sh
+./scripts/build.sh
 ```
 
 ## Run
